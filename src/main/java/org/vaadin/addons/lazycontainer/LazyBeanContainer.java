@@ -1,4 +1,4 @@
-package org.vaadin.lazycontainer;
+package org.vaadin.addons.lazycontainer;
 
 import com.vaadin.data.util.BeanContainer;
 import com.vaadin.data.util.BeanItem;

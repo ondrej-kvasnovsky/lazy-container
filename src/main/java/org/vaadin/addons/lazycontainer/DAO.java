@@ -1,4 +1,4 @@
-package org.vaadin.lazycontainer;
+package org.vaadin.addons.lazycontainer;
 
 import java.util.List;
 

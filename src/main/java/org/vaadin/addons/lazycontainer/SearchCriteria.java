@@ -1,4 +1,4 @@
-package org.vaadin.lazycontainer;
+package org.vaadin.addons.lazycontainer;
 
 /**
  * Should be implemented by search criteria that are usd by the lazy container.
