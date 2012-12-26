@@ -56,10 +56,7 @@ public class UserDAO implements DAO<User> {
 Also we need to make the search criteria that will represent e.g. user's input from user interface. This class needs to extend AbstractSearchCriteria (or implement SearchCriteria) because we need info about last count and whether the search criteria are dirty.
 All that is needed because of performance optimalization (that way we avoid additional calls to the database).
 ```java
-public class UserSearchCriteria implements SearchCriteria {
-
-    private int lastCount;
-    private boolean dirty;
+public class UserSearchCriteria extends AbstractSearchCriteria {
 
     private String searchText;
 
