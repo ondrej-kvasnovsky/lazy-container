@@ -1,7 +1,8 @@
-Lazy containers for Vaadin 7
-============================
+# Lazy containers for Vaadin 7
 
-Maven Dependency
+Note: there is just one type of container at this moment. It is LazyBeanContainer that extends BeanContainer. You can create new request in case you need other type of container.
+
+## Maven Dependency
 
 ```xml
 <dependency>
@@ -16,7 +17,9 @@ Maven Dependency
 </repository>
 ```
 
-How to fetch data from database into a domain object and then display it in a table? Let's explain how it works in the following example.
+## Usage example
+
+Let's explain how to fetch data from database into a domain object and then display it in a table in the following example.
 
 Domain object will be represented by User class with two fields (firstName and surname).
 
