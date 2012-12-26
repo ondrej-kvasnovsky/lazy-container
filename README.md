@@ -1,6 +1,6 @@
 # Lazy containers for Vaadin 7
 
-Note: there is just one type of container at this moment. It is LazyBeanContainer that extends BeanContainer. You can create new request in case you need other type of container.
+Note: there is just one type of container at this moment. It is LazyBeanContainer that extends BeanContainer. You can create new request in case you need other type of container or just fork the project and create it + make a new pull request so other people can love you.
 
 ## Maven Dependency
 
@@ -19,7 +19,7 @@ Note: there is just one type of container at this moment. It is LazyBeanContaine
 
 ## Usage example
 
-Let's explain how to fetch data from database into a domain object and then display it in a table in the following example.
+Let's explain how to fetch data from database into a domain object and then display it in a table in the following lines.
 
 Domain object will be represented by User class with two fields (firstName and surname).
 
@@ -53,7 +53,8 @@ public class UserDAO implements DAO<User> {
 }
 ```
 
-Also we need to make the search criteria that will represent e.g. user's input from user interface. This class needs to implement SearchCriteria because we need info about last count and whether the search criteria are dirty. All that is needed because of performance optimalization (that way we avoid additional calls to the database).
+Also we need to make the search criteria that will represent e.g. user's input from user interface. This class needs to extend AbstractSearchCriteria (or implement SearchCriteria) because we need info about last count and whether the search criteria are dirty.
+All that is needed because of performance optimalization (that way we avoid additional calls to the database).
 ```java
 public class UserSearchCriteria implements SearchCriteria {
 
@@ -66,7 +67,7 @@ public class UserSearchCriteria implements SearchCriteria {
 }
 ```
 
-The last step is to create new LazyBeanContainer and set that to the table.
+The last step is to create new LazyBeanContainer and set the newly created container to the table.
 ```java
 public class MyVaadinUI extends UI {
 
