@@ -17,7 +17,7 @@ Note: there is just one type of container at this moment. It is LazyBeanContaine
 </repository>
 ```
 
-## Usage example
+## Table with Lazy Container
 
 Let's explain how to fetch data from database into a domain object and then display it in a table in the following lines.
 
@@ -83,6 +83,32 @@ public class MyVaadinUI extends UI {
 
 }
 ```
+
+## ComboBox with Lazy Container
+
+Let's use the same domain classes from the previous example. Note that database calls will be started after we type 3 and more letters to the combo box field (this can be changed by using setMinFilterLength(int) method).
+
+```java
+public class MyVaadinUI extends UI {
+
+    @Override
+    protected void init(VaadinRequest request) {
+        final VerticalLayout layout = new VerticalLayout();
+        layout.setMargin(true);
+
+        LazyBeanContainer dataSource = new LazyBeanContainer(User.class, new UserDAO(), new UserSearchCriteria());
+
+        ComboBox comboBox = new ComboBox("Combobox:");
+        comboBox.setContainerDataSource(dataSource);
+        comboBox.setItemCaptionPropertyId("firstName");
+        layout.addComponent(comboBox);
+
+        setContent(layout);
+    }
+
+}
+```
+
 
 
 

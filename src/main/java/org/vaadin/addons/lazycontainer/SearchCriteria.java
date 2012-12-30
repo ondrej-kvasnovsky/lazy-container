@@ -37,4 +37,7 @@ public interface SearchCriteria {
      */
     public void setDirty(boolean dirty);
 
+    public String getFilter();
+
+    public void setFilter(String filter);
 }
