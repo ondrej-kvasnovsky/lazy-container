@@ -7,6 +7,7 @@ public class AbstractSearchCriteria implements SearchCriteria {
 
     private int lastCount;
     private boolean dirty;
+    private String filter;
 
     @Override
     public int getLastCount() {
@@ -26,5 +27,15 @@ public class AbstractSearchCriteria implements SearchCriteria {
     @Override
     public void setDirty(boolean dirty) {
         this.dirty = dirty;
+    }
+
+    @Override
+    public String getFilter() {
+        return filter;
+    }
+
+    @Override
+    public void setFilter(String filter) {
+        this.filter = filter;
     }
 }
