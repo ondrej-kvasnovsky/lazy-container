@@ -95,15 +95,13 @@ public class MyVaadinUI extends UI {
     protected void init(VaadinRequest request) {
         final VerticalLayout layout = new VerticalLayout();
         layout.setMargin(true);
-
-        LazyBeanContainer dataSource = new LazyBeanContainer(User.class, new UserDAO(), new UserSearchCriteria());
+        setContent(layout);
 
         ComboBox comboBox = new ComboBox("Combobox:");
+        LazyBeanContainer dataSource = new LazyBeanContainer(User.class, new UserDAO(), new UserSearchCriteria());
         comboBox.setContainerDataSource(dataSource);
         comboBox.setItemCaptionPropertyId("firstName");
-        layout.addComponent(comboBox);
-
-        setContent(layout);
+        layout.addComponent(comboBox);å
     }
 
 }
