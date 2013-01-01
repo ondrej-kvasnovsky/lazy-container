@@ -8,7 +8,7 @@ Note: there is just one type of container at this moment. It is LazyBeanContaine
 <dependency>
    <groupId>org.vaadin.addons</groupId>
    <artifactId>lazy-container</artifactId>
-   <version>0.0.2</version>
+   <version>0.0.3</version>
 </dependency>
 
 <repository>
