@@ -101,7 +101,7 @@ public class MyVaadinUI extends UI {
         LazyBeanContainer dataSource = new LazyBeanContainer(User.class, new UserDAO(), new UserSearchCriteria());
         comboBox.setContainerDataSource(dataSource);
         comboBox.setItemCaptionPropertyId("firstName");
-        layout.addComponent(comboBox);å
+        layout.addComponent(comboBox);
     }
 
 }

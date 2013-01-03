@@ -21,7 +21,6 @@ public class LazyBeanContainer extends BeanContainer {
     // min filter string length, after this length is exceeded database calls are allowed
     private int minFilterLength;
 
-
     public LazyBeanContainer(Class type, DAO dao, SearchCriteria criteria) {
         super(type);
         this.criteria = criteria;
@@ -96,6 +95,12 @@ public class LazyBeanContainer extends BeanContainer {
             String name = propertyId.toString();
             orderByColumns.add(new OrderByColumn(name, type));
         }
+    }
+
+    @Override
+    public boolean containsId(Object itemId) {
+        // we need this because of value change listener (otherwise selected item event won't be fired)
+        return true;
     }
 
     public int getMinFilterLength() {
